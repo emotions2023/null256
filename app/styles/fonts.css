@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'BIZ UDPMincho';
+    src: url('/path/to/BIZ-UDPMincho.woff2') format('woff2'),
+         url('/path/to/BIZ-UDPMincho.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  .font-biz-udp-mincho {
+    font-family: 'BIZ UDPMincho', serif;
+  }

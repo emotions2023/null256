@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 0, 0, 0;
+  --scrollbar-primary: #96A6FF;
+  --scrollbar-secondary: rgba(0, 255, 255, 0.8);
+}
+
+body {
+  /* color: rgb(var(--foreground-rgb)); */
+  color: rgb(0, 0, 0);
+  background: rgb(var(--background-rgb));
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom styles */
+.eclipse-glow {
+  box-shadow: 0 0 200px rgba(255, 165, 0, 0.2);
+}
+
+.bg-gradient-radial {
+  background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+/* スクロールバーのスタイリング */
+/* Webkit用 */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  background: #000;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(90deg, 
+    transparent,
+    rgba(0, 0, 255, 0.1) 50%,
+    transparent
+  );
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    45deg,
+    var(--scrollbar-primary),
+    var(--scrollbar-secondary)
+  );
+  box-shadow: 
+    0 0 5px #0051ff,
+    0 0 10px #0051ff,
+    0 0 15px #00ffff;
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    45deg,
+    rgba(0, 132, 255, 0.9),
+    rgba(0, 255, 255, 0.9)
+  );
+  box-shadow: 
+    0 0 10px #0084ff,
+    0 0 20px #00ffff,
+    0 0 30px #00ffff;
+}
+
+/* Firefox用 */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-primary) transparent;
+}
+
+.bg-grid-pattern {
+  background-size: 50px 50px;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
