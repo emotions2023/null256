@@ -15,14 +15,14 @@ export default function WorkDetail({ work }: WorkDetailProps) {
   return (
     <div className="min-h-screen">
     {/* ヒーローセクション */}
-    <div className="h-[50vh] relative bg-gradient-to-b from-blue-900/20 to-black flex items-center">
-      <div className="absolute inset-0 bg-grid-pattern opacity-10" />
+    <div className="h-[50vh] relative bg-white flex items-center">
+      <div className="absolute inset-0 bg-grid-pattern opacity-5" />
       
       <div className="max-w-4xl mx-auto px-4 w-full relative">
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-2xl sm:text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-cyan-500 leading-relaxed tracking-tight"
+          className="text-2xl sm:text-3xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-cyan-500 leading-relaxed tracking-normal"
         >
           {work.title}
         </motion.h1>
@@ -49,9 +49,31 @@ export default function WorkDetail({ work }: WorkDetailProps) {
       </div>
     </div>
 
+    {work.demo && work.demo.type === 'youtube' && (
+          <section className="max-w-4xl mx-auto px-4 py-20">
+            <h2 className="text-3xl  mb-12 relative">
+              Demo
+              <div className="absolute bottom-0 left-0 w-12 h-1 bg-blue-500" />
+            </h2>
+            
+            <div className="relative aspect-video rounded-xl overflow-hidden bg-white/50 border border-white/10">
+              <iframe
+                width="100%"
+                height="100%"
+                src={`https://www.youtube.com/embed/${work.demo.videoId}`}
+                title={work.demo.title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute top-0 left-0 w-full h-full"
+              />
+            </div>
+          </section>
+        )}
+
       {/* Features セクション */}
       <section className="max-w-4xl mx-auto px-4">
-        <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 relative">
+        <h2 className="text-2xl md:text-3xl  mb-8 md:mb-12 relative">
           Features
           <div className="absolute bottom-0 left-0 w-12 h-1 bg-blue-500" />
         </h2>
@@ -70,7 +92,7 @@ export default function WorkDetail({ work }: WorkDetailProps) {
                   <span className="text-blue-500">{feature.icon}</span>
                 </div>
               )}
-              <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3">{feature.title}</h3>
+              <h3 className="text-lg md:text-xl  mb-2 md:mb-3">{feature.title}</h3>
               <p className="text-sm md:text-base text-gray-400">{feature.description}</p>
             </motion.div>
           ))}
@@ -79,14 +101,14 @@ export default function WorkDetail({ work }: WorkDetailProps) {
 
       {/* Tech Stack セクション */}
       <section className="max-w-4xl mx-auto px-4 py-20 bg-white/50">
-        <h2 className="text-3xl font-bold mb-12 relative">
+        <h2 className="text-3xl  mb-12 relative">
           Tech Stack
           <div className="absolute bottom-0 left-0 w-12 h-1 bg-blue-500" />
         </h2>
         
         {work.techStack.map((stack, stackIndex) => (
           <div key={stack.category} className="mb-12">
-            <h3 className="text-xl font-bold mb-6 text-gray-300">{stack.category}</h3>
+            <h3 className="text-xl  mb-6 text-gray-300">{stack.category}</h3>
             <div className="flex flex-wrap gap-3">
               {stack.items.map((item, itemIndex) => (
                 <motion.div
@@ -111,7 +133,7 @@ export default function WorkDetail({ work }: WorkDetailProps) {
       {/* Highlights セクション */}
       {work.highlights && (
         <section className="max-w-4xl mx-auto px-4 py-20">
-          <h2 className="text-3xl font-bold mb-12 relative">
+          <h2 className="text-3xl  mb-12 relative">
             Highlights
             <div className="absolute bottom-0 left-0 w-12 h-1 bg-blue-500" />
           </h2>
@@ -124,35 +146,13 @@ export default function WorkDetail({ work }: WorkDetailProps) {
                 transition={{ delay: index * 0.1 }}
                 className="bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm p-6 rounded-xl border border-white/10"
               >
-                <h3 className="text-xl font-bold mb-3">{highlight.title}</h3>
+                <h3 className="text-xl  mb-3">{highlight.title}</h3>
                 <p className="text-gray-400">{highlight.description}</p>
               </motion.div>
             ))}
           </div>
         </section>
       )}
-
-        {work.demo && work.demo.type === 'youtube' && (
-          <section className="max-w-4xl mx-auto px-4 py-20">
-            <h2 className="text-3xl font-bold mb-12 relative">
-              Demo
-              <div className="absolute bottom-0 left-0 w-12 h-1 bg-blue-500" />
-            </h2>
-            
-            <div className="relative aspect-video rounded-xl overflow-hidden bg-white/50 border border-white/10">
-              <iframe
-                width="100%"
-                height="100%"
-                src={`https://www.youtube.com/embed/${work.demo.videoId}`}
-                title={work.demo.title}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="absolute top-0 left-0 w-full h-full"
-              />
-            </div>
-          </section>
-        )}
     </div>
   );
 }

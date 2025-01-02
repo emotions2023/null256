@@ -60,7 +60,7 @@ export const works: Work[] = [
     title: 'AI Chat Assistant',
     description: '個人の経験や知識を組み込んだAIチャットボット。24時間対応の自然な対話を実現。', // カード用に簡潔に
     thumbnail: {
-      src: '/img/works/chatbot-thumbnail.jpg',
+      src: '/img/works/Logo.png',
       alt: 'AI Chat Assistant thumbnail showing conversation interface',
       width: 1280,
       height: 720
@@ -70,9 +70,9 @@ export const works: Work[] = [
       end: '2024-12'
     },
     primaryTechStack: [
-      { name: 'Next.js', icon: 'nextjs' },
-      { name: 'Claude API', icon: 'ai' },
-      { name: 'TypeScript', icon: 'typescript' }
+      { name: 'Next.js'},
+      { name: 'Claude API'},
+      { name: 'TypeScript'}
     ],
     // 詳細ページ用の情報
     fullDescription: `
@@ -134,7 +134,7 @@ export const works: Work[] = [
     ],
     demo: {
       type: 'youtube',
-      videoId: 'YDu_EOzztHw',  // YouTubeの動画ID
+      videoId: 'j8pWvD7Hj6Y',  // YouTubeの動画ID
       title: 'AI Chat Assistant Demo - Portfolio'
     }
   }

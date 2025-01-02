@@ -25,3 +25,14 @@ const SpecialtySection = () => {
   };
 
   export default SpecialtySection;
+// import SpecialtyPhysics from '../features/specialty-physics';
+
+// const SpecialtySection = () => {
+//   return (
+//     <section id="skill" className="min-h-[70vh] flex flex-col items-center justify-center px-4 mt-8">
+//       <SpecialtyPhysics />
+//     </section>
+//   );
+// };
+
+// export default SpecialtySection;
