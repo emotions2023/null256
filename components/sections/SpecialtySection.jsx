@@ -9,7 +9,7 @@ const SpecialtySection = () => {
     ];
   
     return (
-      <section id="skill" className="min-h-[70vh] flex flex-col items-center justify-center px-4 mt-8">
+      <section id="skill" className="min-h-[40vh] flex flex-col items-center justify-center px-4 mt-8">
         <h2 className="text-xl mb-16">SPECIALTY FIELD</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-3xl">
           {specialties.map(({ title, subtitle }, index) => (
@@ -25,14 +25,3 @@ const SpecialtySection = () => {
   };
 
   export default SpecialtySection;
-// import SpecialtyPhysics from '../features/specialty-physics';
-
-// const SpecialtySection = () => {
-//   return (
-//     <section id="skill" className="min-h-[70vh] flex flex-col items-center justify-center px-4 mt-8">
-//       <SpecialtyPhysics />
-//     </section>
-//   );
-// };
-
-// export default SpecialtySection;

@@ -57,7 +57,7 @@ const TrainingSection = () => {
   
     return (
       <section id="training" className="min-h-screen flex flex-col items-center justify-center px-4">
-        <h2 className="text-xl mb-16">TRAINING</h2>
+        <h2 className="text-xl mt-32 mb-16">TRAINING</h2>
         <div className="max-w-2xl w-full space-y-16">
           {Object.entries(trainings).map(([key, category]) => (
             <div key={key}>
