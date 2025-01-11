@@ -5,6 +5,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import LoadingScreen from '@/components/comon/LoadingScreen';
 import { ChatBot } from '@/components/chat/ChatBot';
+import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -34,6 +35,7 @@ export default function RootLayout({
         <LoadingScreen />
         {children}
         <ChatBot />
+        <Analytics />
       </body>
     </html>
   );
