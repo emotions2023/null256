@@ -33,18 +33,18 @@ export default function WorkCard({ work }: WorkCardProps) {
           </div>
 
           {/* Title */}
-          <h3 className="text-lg font-medium mb-2
+          <h3 className="text-lg font-medium tracking-wide mb-3
             group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 
             transition-colors duration-500">
             {work.title}
           </h3>
 
           {/* Tech Stack */}
-          <div className="flex flex-wrap gap-2 mb-4">
+          <div className="flex flex-wrap gap-1.5">
             {work.primaryTechStack.map((tech) => (
               <div 
                 key={tech.name} 
-                className="flex items-center text-xs px-2 py-1 rounded-full 
+                className="flex items-center text-xs tracking-wide px-2 py-0.5 rounded-full
                   border border-gradient-to-r from-blue-500/20 to-purple-500/20 
                   group-hover:bg-blue-500/5
                   transition-all duration-500"
@@ -60,7 +60,7 @@ export default function WorkCard({ work }: WorkCardProps) {
           </div>
 
           {/* Description */}
-          <p className="text-sm text-gray-400 line-clamp-2 group-hover:text-gray-300 transition-colors duration-500">
+          <p className="text-sm text-gray-400 line-clamp-2 tracking-wide mt-3 group-hover:text-gray-300 transition-colors duration-500">
             {work.description}
           </p>
         </div>

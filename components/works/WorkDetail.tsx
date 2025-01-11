@@ -2,9 +2,6 @@
 'use client';
 
 import { Work } from '@/lib/works';
-import Link from 'next/link';
-import Image from 'next/image';
-import { ArrowLeft } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 interface WorkDetailProps {
@@ -49,27 +46,54 @@ export default function WorkDetail({ work }: WorkDetailProps) {
       </div>
     </div>
 
-    {work.demo && work.demo.type === 'youtube' && (
-          <section className="max-w-4xl mx-auto px-4 py-20">
-            <h2 className="text-3xl  mb-12 relative">
-              Demo
-              <div className="absolute bottom-0 left-0 w-12 h-1 bg-blue-500" />
-            </h2>
-            
-            <div className="relative aspect-video rounded-xl overflow-hidden bg-white/50 border border-white/10">
-              <iframe
-                width="100%"
-                height="100%"
-                src={`https://www.youtube.com/embed/${work.demo.videoId}`}
-                title={work.demo.title}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="absolute top-0 left-0 w-full h-full"
-              />
-            </div>
-          </section>
-        )}
+    {work.demo && (
+      <section className="max-w-4xl mx-auto px-4 py-20">
+        <h2 className="text-3xl mb-12 relative">
+          Demo
+          <div className="absolute bottom-0 left-0 w-12 h-1 bg-blue-500" />
+        </h2>
+        
+        <div className="relative aspect-video rounded-xl overflow-hidden bg-white/50 border border-white/10">
+          <video
+            src={work.demo.videoUrl}
+            poster={work.demo.poster}
+            title={work.demo.title}
+            controls
+            playsInline
+            className="absolute top-0 left-0 w-full h-full object-cover"
+          >
+            <source src={work.demo.videoUrl} type="video/mp4" />
+            お使いのブラウザは動画の再生に対応していません。
+          </video>
+        </div>
+      </section>
+    )}
+
+    {/* QRコードセクション */}
+    {work.qrCode && (
+      <section className="max-w-4xl mx-auto px-4 py-20">
+        <h2 className="text-3xl mb-12 relative">
+          QR Code
+          <div className="absolute bottom-0 left-0 w-12 h-1 bg-blue-500" />
+        </h2>
+        <div className="flex items-center">
+          <img
+            src={work.qrCode.image.src}
+            alt={work.qrCode.image.alt}
+            width={work.qrCode.image.width}
+            height={work.qrCode.image.height}
+            className="rounded-lg"
+          />
+          <div className="ml-4">
+            <h3 className="text-lg">{work.qrCode.title}</h3>
+            <p className="text-sm text-gray-400">{work.qrCode.description}</p>
+            <a href={work.qrCode.url} className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">
+              デモお試しリンク
+            </a>
+          </div>
+        </div>
+      </section>
+    )}    
 
       {/* Features セクション */}
       <section className="max-w-4xl mx-auto px-4">

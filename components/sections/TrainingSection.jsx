@@ -29,6 +29,16 @@ const TrainingSection = () => {
             title: "ChatGPT活用",
             description: "ビジネスコーディングと業務のAI活用の検討と考えるワークショップ",
             date: "2023年"
+          },
+          {
+            title: "G-AI Heroes Meet up Osaka #2",
+            description: "生成AIユーザー大規模オフラインミートアップ登壇",
+            date: "2025年"
+          },
+          {
+            title: "KANSAI AI PUB（関西×人工知能×場）",
+            description: "「AI（人工知能）」「LLM（Large Language Model）」「機械学習（Machine Learning）」「深層学習（Deep Learning）」などに関心のある人が集まる場にて登壇",
+            date: "2025年"
           }
         ]
       }

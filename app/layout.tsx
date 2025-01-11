@@ -4,7 +4,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import LoadingScreen from '@/components/comon/LoadingScreen';
-import { ChatBot } from '@/components/features/Chatbot';
+import { ChatBot } from '@/components/chat/ChatBot';
 
 const inter = Inter({ subsets: ['latin'] });
 
